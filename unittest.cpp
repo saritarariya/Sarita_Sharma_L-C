@@ -1,63 +1,37 @@
-#include <iostream>
 #include <gtest/gtest.h>
-#include "KeplarConstant.cpp"
-using ::testing::FloatLE;
+#include "kaprekarConstant.h"
 
-class KaprekarTest : public ::testing::Test {
-public:
-    CsvReader *userCsvReader;
-    void SetUp()
-    {
-        userCsvReader = new CsvReader();
-    }
-    void tearDown()
-    {
-        delete userCsvReader;
-    }
+class KaprekarTest : public ::testing::Test
+{
 };
 
-
-
-TEST_F(KaprekarTest, StringSortAscending) {
-    std::string input = "321";
-    std::string expected_output = "123";
-    sortDigitsDescending(input);
-    EXPECT_EQ(input, expected_output);
-}
-
-TEST_F(KaprekarTest, StringSortDescending) {
-    std::string input = "123";
-    std::string expected_output = "321";
-    sortDigitsAscending(input);
-    EXPECT_EQ(input, expected_output);
-}
-
-TEST_F(KaprekarTest, swapDigits)
+TEST_F(KaprekarTest, swap)
 {
-   char digit1='3';
-   char digit2='4';
-   swap(digit1,digit2);
-   EXPECT_EQ(digit1,'4');
-   EXPECT_EQ(digit2,'3');
+    int digit1 = 31;
+    int digit2 = 41;
+    swap(digit1, digit2);
+    EXPECT_EQ(digit1, 41);
+    EXPECT_EQ(digit2, 31);
 }
 
-// TEST_F(KaprekarTest, findDifference)
-// {
-//    int input = 1459;
-//    int expected_output = 8082;
-//    int output = findDifference(input);
-//    EXPECT_EQ(output,expected_output);
-// }
+TEST_F(KaprekarTest, findDifference)
+{
+    int inputNumber = 9934;
+    int expectedOutput = 6444;
+    int output = findDifference(inputNumber);
+    EXPECT_EQ(output, expectedOutput);
+}
 
-// TEST_F(KaprekarTest, findStepsForKaprekarConstant)
-// {
-//    int input = 1459;
-//    int expected_output = 3;
-//    int output = findStepsForKaprekarConstant(input);
-//    EXPECT_EQ(output,expected_output);
-// }
+TEST_F(KaprekarTest, stepsToKaprekarConstant)
+{
+    int inputNumber = 2450;
+    int expectedOutput = 8;
+    int output = stepsToKaprekarConstant(inputNumber);
+    EXPECT_EQ(output, expectedOutput);
+}
 
-int main() {
-    testing::InitGoogleTest();
+int main(int argc, char **argv)
+{
+    testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
