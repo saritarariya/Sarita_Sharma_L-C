@@ -22,11 +22,11 @@ TEST_F(KaprekarTest, findDifference)
     EXPECT_EQ(output, expectedOutput);
 }
 
-TEST_F(KaprekarTest, stepsToKaprekarConstant)
+TEST_F(KaprekarTest, stepsForKaprekarConstant)
 {
     int inputNumber = 2450;
     int expectedOutput = 8;
-    int output = stepsToKaprekarConstant(inputNumber);
+    int output = stepsForKaprekarConstant(inputNumber);
     EXPECT_EQ(output, expectedOutput);
 }
 

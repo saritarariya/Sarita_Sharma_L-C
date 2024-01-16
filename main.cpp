@@ -9,7 +9,7 @@ int main()
         std::cout << "Please enter a valid four-digit number." << std::endl;
         return 1;
     }
-    int kaprekarSteps = stepsToKaprekarConstant(number);
+    int kaprekarSteps = stepsForKaprekarConstant(number);
 
     if (kaprekarSteps != 0)
     {

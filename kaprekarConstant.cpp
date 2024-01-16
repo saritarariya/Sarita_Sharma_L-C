@@ -8,7 +8,7 @@ void swap(int &num1, int &num2)
     num2 = temp;
 }
 
-void sortDigitsOfNumber(int *digits)
+void sortDigits(int *digits)
 {
     for (int i = 0; i < 3; ++i)
     {
@@ -30,7 +30,7 @@ int findDifference(int number)
         digits[i] = number % 10;
         number /= 10;
     }
-    sortDigitsOfNumber(digits);
+    sortDigits(digits);
     int ascendingNumber = 0;
     for (int i = 0; i < 4; ++i)
     {
@@ -46,7 +46,7 @@ int findDifference(int number)
     return difference;
 }
 
-int stepsToKaprekarConstant(int number)
+int stepsForKaprekarConstant(int number)
 {
     int currentNumber = number;
 
